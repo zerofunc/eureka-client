@@ -2,17 +2,17 @@ spring:
   application:
     name: client-service
 server:
-port: 808${SEQUENCE_NO}
+  port: 8083
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone : http://admin:admin123@localhost:8761/eureka/
     registry-fetch-interval-seconds: 3
-    disable-delta: true
+#    disable-delta: true
   instance:
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
-    instance-id: ${spring.application.name}-${SEQUENCE_NO}
+#    instance-id: ${spring.application.name}-${server.port}
 management:
   endpoint:
     shutdown:
